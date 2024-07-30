@@ -13,11 +13,21 @@ const UserModel = sequelize.define("user",{
     name : {
         type :  DataTypes.STRING,
         allowNull : false,
-        
+        validate : {
+            notNull : {
+                msg : "Name is required!"
+            }
+        }
     },
     email : {
         type : DataTypes.STRING,
-        allowNull : false
+        allowNull : false,
+        validate : {
+            notNull : {
+                msg : "Email is required!"
+            }
+        }
+  
      } 
 })
 
